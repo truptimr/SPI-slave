@@ -11,7 +11,5 @@ build/SPI_XC32_PIC32MX795F512L/production/_ext/2108356922/SPI-slave_Foe.o:  \
  ../Common/ecatcoe.h  \
 ../Common/mailbox.h  \
 ../Common/ecatappl.h  \
- ../Common/eoeappl.h  \
-../Common/ecateoe.h  \
-../Common/foeappl.h  \
- ../Common/ecatfoe.h 
+ ../Common/foeappl.h  \
+../Common/ecatfoe.h 

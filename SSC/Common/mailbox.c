@@ -145,7 +145,6 @@ V4.07 ECAT 1: The sources for SPI and MCI were merged (in ecat_def.h<br>
 /* ECATCHANGE_START(V5.12) MBX3*/
 #include "sdoserv.h"
 /* ECATCHANGE_END(V5.12) MBX3*/
-#include "ecateoe.h"
 #include "ecatfoe.h"
 #include "emcy.h"
 
@@ -268,9 +267,6 @@ void MBX_Init(void)
     sMbxSendQueue.maxQueueSize     = MAX_MBX_QUEUE_SIZE;
     psWriteMbx  = NULL;
 
-/*ECATCHANGE_START(V5.12) EOE5*/
-    EOE_Init(TRUE);
-/*ECATCHANGE_END(V5.12) EOE5*/
 
     psRepeatMbx = NULL;
     psReadMbx    = NULL;
@@ -400,9 +396,6 @@ void MBX_StopMailboxHandler(void)
 
     SODS_ClearPendingResponse();
 
-/*ECATCHANGE_START(V5.12) EOE5*/
-    EOE_Init(FALSE);
-/*ECATCHANGE_END(V5.12) EOE5*/
 
     FOE_Init();
 
@@ -473,11 +466,6 @@ UINT8 MailboxServiceInd(TMBX MBXMEM *pMbx)
     case MBX_TYPE_COE:
         /* CoE datagram received */
         result = COE_ServiceInd((TCOEMBX MBXMEM *) pMbx);
-        break;
-
-    case MBX_TYPE_EOE:
-        /* EoE datagram received */
-        result = EOE_ServiceInd(pMbx);
         break;
 
     case MBX_TYPE_FOE:
@@ -620,14 +608,6 @@ void MBX_MailboxReadInd(void)
                 /*Set the pending CoE indication is an error occurred during the continue indication*/
                 u8MailboxSendReqStored |= COE_SERVICE;
             }
-        }
-        else
-        if ( u8MailboxSendReqStored & EOE_SERVICE )
-        {
-            /* reset the flag indicating that EoE service to be sent was stored */
-            u8MailboxSendReqStored &= ~EOE_SERVICE;
-            /* call EoE function that will send the stored EoE service */
-            EOE_ContinueInd(psWriteMbx);
         }
         else
         if ( u8MailboxSendReqStored & FOE_SERVICE )

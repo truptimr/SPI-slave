@@ -354,26 +354,14 @@ void ECAT_CheckTimer(void)
 
     ECAT_SetLedIndication();
 
-    DC_CheckWatchdog();
 
 
 /*ECATCHANGE_START(V5.12) COE4*/
 
-    /* Increment the counter every ms between two updates based on the system time (32Bit overrun is handled in COE_SyncTimeStamp) */
-    if (!b32BitDc || ((u64Timestamp & 0xFFFFFFFF) <= 4293000000))
-    {
 
         /* the timestamp is stored in ns */
         u64Timestamp = u64Timestamp + 1000000;
 
-    }
-    else if(b32BitDc)
-    {
-        /* in case of a 32Bit DC and almost expired time stamp check for a DC overrun*/
-        u32CheckForDcOverrunCnt = CHECK_DC_OVERRUN_IN_MS;
-    }
-
-    u32CheckForDcOverrunCnt++;
 /*ECATCHANGE_END(V5.12) COE4*/
 }
 
@@ -456,194 +444,7 @@ UINT32 GetSystemTimeDelay(UINT32 u32StartTime)
 }
 /*ECATCHANGE_END(V5.12) ECAT1*/
 
-void PDI_Isr(void)
-{
-    if(bEscIntEnabled)
-    {
-        /* get the AL event register */
-        UINT16  ALEvent = HW_GetALEventRegister_Isr();
-        ALEvent = SWAPWORD(ALEvent);
 
-        if ( ALEvent & PROCESS_OUTPUT_EVENT )
-        {
-            if(bDcRunning && bDcSyncActive)
-            {
-                /* Reset SM/Sync0 counter. Will be incremented on every Sync0 event*/
-                u16SmSync0Counter = 0;
-            }
-            if(sSyncManOutPar.u16SmEventMissedCounter > 0)
-            {
-                sSyncManOutPar.u16SmEventMissedCounter--;
-            }
-
-/*ECATCHANGE_START(V5.12) ECAT5*/
-            sSyncManInPar.u16SmEventMissedCounter = sSyncManOutPar.u16SmEventMissedCounter;
-/*ECATCHANGE_END(V5.12) ECAT5*/
-
-
-
-        /* Outputs were updated, set flag for watchdog monitoring */
-        bEcatFirstOutputsReceived = TRUE;
-
-
-        /*
-            handle output process data event
-        */
-        if ( bEcatOutputUpdateRunning )
-        {
-            /* slave is in OP, update the outputs */
-            PDO_OutputMapping();
-        }
-        else
-        {
-            /* Just acknowledge the process data event in the INIT,PreOP and SafeOP state */
-            HW_EscReadDWordIsr(u32dummy,nEscAddrOutputData);
-            HW_EscReadDWordIsr(u32dummy,(nEscAddrOutputData+nPdOutputSize-4));
-        }
-        }
-
-        /*
-            Call ECAT_Application() in SM Sync mode
-        */
-        if (sSyncManOutPar.u16SyncType == SYNCTYPE_SM_SYNCHRON)
-        {
-            /* The Application is synchronized to process data Sync Manager event*/
-            ECAT_Application();
-        }
-
-    if ( bEcatInputUpdateRunning 
-       && ((sSyncManInPar.u16SyncType == SYNCTYPE_SM_SYNCHRON) || (sSyncManInPar.u16SyncType == SYNCTYPE_SM2_SYNCHRON))
-        )
-    {
-        /* EtherCAT slave is at least in SAFE-OPERATIONAL, update inputs */
-        PDO_InputMapping();
-    }
-
-    /*
-      Check if cycle exceed
-    */
-    /*if next SM event was triggered during runtime increment cycle exceed counter*/
-    ALEvent = HW_GetALEventRegister_Isr();
-    ALEvent = SWAPWORD(ALEvent);
-
-    if ( ALEvent & PROCESS_OUTPUT_EVENT )
-    {
-        sSyncManOutPar.u16CycleExceededCounter++;
-        sSyncManInPar.u16CycleExceededCounter = sSyncManOutPar.u16CycleExceededCounter;
-
-      /* Acknowledge the process data event*/
-            HW_EscReadDWordIsr(u32dummy,nEscAddrOutputData);
-            HW_EscReadDWordIsr(u32dummy,(nEscAddrOutputData+nPdOutputSize-4));
-    }
-    } //if(bEscIntEnabled)
-
-/*ECATCHANGE_START(V5.12) ECAT5*/
-    COE_UpdateSyncErrorStatus();
-/*ECATCHANGE_END(V5.12) ECAT5*/
-
-}
-
-void Sync0_Isr(void)
-{
-     Sync0WdCounter = 0;
-
-    if(bDcSyncActive)
-    {
-
-        if ( bEcatInputUpdateRunning )
-        {
-            LatchInputSync0Counter++;
-        }
-
-        if(u16SmSync0Value > 0)
-        {
-           /* Check if Sm-Sync sequence is invalid */
-           if (u16SmSync0Counter > u16SmSync0Value)
-           {
-              if ((nPdOutputSize > 0) && (sSyncManOutPar.u16SmEventMissedCounter <= sErrorSettings.u16SyncErrorCounterLimit))
-              {
-                 sSyncManOutPar.u16SmEventMissedCounter = sSyncManOutPar.u16SmEventMissedCounter + 3;
-              }
-
-           if ((nPdInputSize > 0) && (nPdOutputSize == 0) && (sSyncManInPar.u16SmEventMissedCounter <= sErrorSettings.u16SyncErrorCounterLimit))
-           {
-               sSyncManInPar.u16SmEventMissedCounter = sSyncManInPar.u16SmEventMissedCounter + 3;
-           }
-
-           } // if (u16SmSync0Counter > u16SmSync0Value)
-
-           
-           if ((nPdOutputSize == 0) && (nPdInputSize > 0))
-           {
-              /* Input only with DC, check if the last input data was read*/
-              UINT16  ALEvent = HW_GetALEventRegister_Isr();
-              ALEvent = SWAPWORD(ALEvent);
-
-              if ((ALEvent & PROCESS_INPUT_EVENT) == 0)
-              {
-
-                 /* no input data was read by the master, increment the sm missed counter*/
-                if (u16SmSync0Counter <= u16SmSync0Value)
-                {
-                    u16SmSync0Counter++;
-                }
-              }
-              else
-              {
-                 /* Reset SM/Sync0 counter*/
-                 u16SmSync0Counter = 0;
-
-                 sSyncManInPar.u16SmEventMissedCounter = 0;
-
-              }
-           }
-           else if (u16SmSync0Counter <= u16SmSync0Value)
-           {
-
-               u16SmSync0Counter++;
-           }
-        }//SM -Sync monitoring enabled
-
-
-        /* Application is synchronized to SYNC0 event*/
-        ECAT_Application();
-
-        if ( bEcatInputUpdateRunning 
-           && (LatchInputSync0Value > 0) && (LatchInputSync0Value == LatchInputSync0Counter) ) /* Inputs shall be latched on a specific Sync0 event */
-        {
-            /* EtherCAT slave is at least in SAFE-OPERATIONAL, update inputs */
-            PDO_InputMapping();
-
-            if(LatchInputSync0Value == 1)
-            {
-                /* if inputs are latched on every Sync0 event (otherwise the counter is reset on the next Sync1 event) */
-                LatchInputSync0Counter = 0;
-            }
-        }
-
-    }
-
-/*ECATCHANGE_START(V5.12) ECAT5*/
-    COE_UpdateSyncErrorStatus();
-/*ECATCHANGE_END(V5.12) ECAT5*/
-
-}
-
-void Sync1_Isr(void)
-{
-    Sync1WdCounter = 0;
-
-        if ( bEcatInputUpdateRunning 
-            && (sSyncManInPar.u16SyncType == SYNCTYPE_DCSYNC1)
-            && (LatchInputSync0Value == 0)) /* Inputs are latched on Sync1 (LatchInputSync0Value == 0), if LatchInputSync0Value > 0 inputs are latched with Sync0 */
-        {
-            /* EtherCAT slave is at least in SAFE-OPERATIONAL, update inputs */
-            PDO_InputMapping();
-        }
-
-        /* Reset Sync0 latch counter (to start next Sync0 latch cycle) */
-        LatchInputSync0Counter = 0;
-}
 /////////////////////////////////////////////////////////////////////////////////////////
 /**
 
@@ -851,8 +652,6 @@ UINT16 MainInit(void)
 /* Reset application function pointer*/
 
 
-    pAPPL_EoeReceive = NULL;
-    pAPPL_EoeSettingInd = NULL;
 
     pAPPL_FoeRead = SPIslave_FoeRead;
     pAPPL_FoeReadData = SPIslave_FoeReadData;
@@ -964,7 +763,6 @@ void MainLoop(void)
            DC-Mode:       bEscIntEnabled = TRUE, bDcSyncActive = TRUE */
         if (
             (!bEscIntEnabled || !bEcatFirstOutputsReceived)     /* SM-Synchronous, but not SM-event received */
-          && !bDcSyncActive                                               /* DC-Synchronous */
             )
         {
             /* if the application is running in ECAT Synchron Mode the function ECAT_Application is called
@@ -1017,12 +815,6 @@ void MainLoop(void)
         }
 
 
-/*ECATCHANGE_START(V5.12) COE4*/
-        if (u32CheckForDcOverrunCnt >= CHECK_DC_OVERRUN_IN_MS)
-        {
-            COE_SyncTimeStamp();
-        }
-/*ECATCHANGE_END(V5.12) COE4*/
 
         /* call EtherCAT functions */
         ECAT_Main();
@@ -1368,3 +1160,9 @@ UINT16 ESC_EepromWriteCRC(void)
 
 /** @} */
 
+UINT32 sync0 = 0;
+UINT32 sync1 = 0;
+UINT32 pdi = 0;
+void Sync0_Isr(void) { sync0++; }
+void Sync1_Isr(void) { sync1++; }
+void PDI_Isr(void) { pdi++; }

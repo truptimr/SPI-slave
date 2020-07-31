@@ -91,7 +91,6 @@ V5.01 : Start file change log
 
 #define ESC_RD 0x02
 #define ESC_WR 0x04
-
 /*-----------------------------------------------------------------------------------------
 ------
 ------    Global Variables
@@ -126,7 +125,6 @@ PROTO    void       PDO_ReadInputs(void);
 PROTO    void       PDO_InputMapping(void);
 
 PROTO    void       ECAT_SetLedIndication(void);
-PROTO    void       CalcSMCycleTime(void);
 PROTO    UINT16     ESC_EepromAccess(UINT32 wordaddress, UINT16 wordsize, UINT16 MBXMEM *pData, UINT8 access);
 PROTO    UINT16     ESC_EepromWriteCRC(void);
 

@@ -44,9 +44,6 @@ V5.10.1 : Start file change log
 
 
 
-/*ECATCHANGE_START(V5.12) EOE1*/
-#include "eoeappl.h"
-/*ECATCHANGE_END(V5.12) EOE1*/
 
 /*ECATCHANGE_START(V5.12) FOE1*/
 #include "foeappl.h"
@@ -68,32 +65,6 @@ V5.10.1 : Start file change log
 
 
 
-/*ECATCHANGE_START(V5.12) EOE1*/
-/////////////////////////////////////////////////////////////////////////////////////////
-/**
-
-\param    pData     pointer to the received Ethernet frame
-\param    length    length of the received frame
-
-\brief    This function is called by the SSC if a new Ethernet frame is received via EoE 
-\brief    The response shall be send via "EOE_SendFrameRequest()"
-*////////////////////////////////////////////////////////////////////////////////////////
-PROTO void(*pAPPL_EoeReceive)(UINT16 *pData, UINT16 length);
-
-/////////////////////////////////////////////////////////////////////////////////////////
-/**
-
-\param    pMac                  pointer to configured MAC address
-\param    pIp                   pointer to configured IP address
-\param    pSubNet               pointer to configured Subnet mask address
-\param    pDefaultGateway       pointer to configured default gateway address
-\param    pDnsIp                pointer to configured DNS server IP address
-
-
-\brief    This function is called by the SSC if a new EoE settings are written
-*////////////////////////////////////////////////////////////////////////////////////////
-PROTO void(*pAPPL_EoeSettingInd)(UINT16 *pMac, UINT16 *pIp, UINT16 *pSubNet, UINT16 *pDefaultGateway, UINT16 *pDnsIp);
-/*ECATCHANGE_END(V5.12) EOE1*/
 
 
 /*ECATCHANGE_START(V5.12) FOE1*/
@@ -267,19 +238,5 @@ PROTO void MainLoop(void);
 PROTO void ECAT_StateChange(UINT8 alStatus, UINT16 alStatusCode);
 
 
-/*ECATCHANGE_START(V5.12) EOE1*/
-/////////////////////////////////////////////////////////////////////////////////////////
-/**
-\return   0 = sending of frame started, 1 = frame could not be sent, try it later
-
-\param    pData    pointer to the Ethernet frame to be send 
-                   in case that STATIC_ETHERNET_BUFFER is 0 the memory will be freed after the last fragment was send
-\param    length   length of the Ethernet frame
-
-\brief    This function sends an Ethernet frame via EoE to the master
-\brief    The frame buffer shall dynamic allocated memory which will be deallocated by the SSC after the last EOE segment was send.
-*////////////////////////////////////////////////////////////////////////////////////////
-PROTO UINT16 EOE_SendFrameRequest(UINT16 *pData, UINT16 length);
-/*ECATCHANGE_END(V5.12) EOE1*/
 
 #undef PROTO

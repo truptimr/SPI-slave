@@ -12,6 +12,4 @@ build/SPI_XC32_PIC32MX795F512L/production/_ext/2108356922/foeappl.o:  \
 ../Common/objdef.h  \
 ../Common/sdoserv.h  \
  ../Common/ecatcoe.h  \
-../Common/ecatappl.h  \
-../Common/eoeappl.h  \
- ../Common/ecateoe.h 
+../Common/ecatappl.h 

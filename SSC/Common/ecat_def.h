@@ -162,7 +162,7 @@ AL_EVENT_ENABLED: If an interrupt routine shall be called when one of the Events
 this switch has to be defined to 1 (synchronous modes are supported). <br>
 If the AL Event register shall only be polled, this switch has to be defined to 0 (only free run mode is supported). */
 #ifndef AL_EVENT_ENABLED
-#define AL_EVENT_ENABLED                          1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
+#define AL_EVENT_ENABLED                          0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
 #endif
 
 /** 
@@ -170,7 +170,7 @@ DC_SUPPORTED: If distributed clocks should be supported by the slave, then this 
 If this switch is set, then also AL_EVENT_ENABLED shall be set.<br>
 NOTE: The DC support needs also be set in the "ESC_CONFIG_DATA" settings. */
 #ifndef DC_SUPPORTED
-#define DC_SUPPORTED                              1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
+#define DC_SUPPORTED                              0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
 #endif
 
 /** 
@@ -325,7 +325,7 @@ correctly, because these functions are missing. */
 /** 
 EOE_SUPPORTED: If the EoE services should be supported, then this switch shall be set. */
 #ifndef EOE_SUPPORTED
-#define EOE_SUPPORTED                             1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
+#define EOE_SUPPORTED                             0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
 #endif
 
 /** 
@@ -383,7 +383,7 @@ e.g. ESC_32BIT_ACCESS is set the length and address shall be to an even 4Byte ad
 /** 
 EXPLICIT_DEVICE_ID: If this switch is set Explicit device ID requests are handled. For further information about Explicit Device ID see ETG.1020 specification: www.ethercat.org/MemberArea/download_protocolenhancements.asp */
 #ifndef EXPLICIT_DEVICE_ID
-#define EXPLICIT_DEVICE_ID                        1 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
+#define EXPLICIT_DEVICE_ID                        0 //This define was already evaluated by ET9300 Project Handler(V. 1.4.1.0)!
 #endif
 
 /** 

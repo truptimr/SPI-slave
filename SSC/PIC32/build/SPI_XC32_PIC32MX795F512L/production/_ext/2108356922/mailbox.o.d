@@ -7,6 +7,5 @@ build/SPI_XC32_PIC32MX795F512L/production/_ext/2108356922/mailbox.o:  \
 ../Common/mailbox.h  \
  ../Common/ecatcoe.h  \
 ../Common/sdoserv.h  \
-../Common/ecateoe.h  \
- ../Common/ecatfoe.h  \
-../Common/emcy.h 
+../Common/ecatfoe.h  \
+ ../Common/emcy.h 

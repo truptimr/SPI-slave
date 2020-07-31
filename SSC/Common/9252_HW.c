@@ -173,7 +173,7 @@ UINT8 LAN9252_Init(void)
     do
     {
         data = PDIReadLAN9252DirectReg( LAN9252_BYTE_ORDER_REG);
-        printk("LAN init data %x \r\n", data);
+        printk("LAN init data %x \r\n", data); 
     }while(0x87654321 != data);
     
     do

@@ -32,15 +32,11 @@
 #include "console.h"
 #include "semi_auto.h"
 #include "global.h"
-
-
 /*--------------------------------------------------------------------------------------
 ------
 ------    local types and defines
 ------
 --------------------------------------------------------------------------------------*/
-
-
 
 /*-----------------------------------------------------------------------------------------
 ------
@@ -87,7 +83,7 @@ void    APPL_AckErrorInd(UINT16 stateTrans)
 
 UINT16 APPL_StartMailboxHandler(void)
 {
-         UINT16 SiiIDValue = 0;
+        UINT16 SiiIDValue = 0;
 
     UINT16 rtn = ESC_EepromAccess(0x4,1,&SiiIDValue,ESC_RD);
 //    printk("SII value %u \r\n", SiiIDValue);
@@ -104,7 +100,7 @@ UINT16 APPL_StartMailboxHandler(void)
     }
    
 
-//    
+//
     return ALSTATUSCODE_NOERROR;
 }
 
@@ -142,6 +138,7 @@ UINT16 APPL_StopMailboxHandler(void)
 
 UINT16 APPL_StartInputHandler(UINT16 *pIntMask)
 {
+  
     return ALSTATUSCODE_NOERROR;
 }
 
@@ -295,8 +292,8 @@ UINT16 APPL_GenerateMapping(UINT16 *pInputSize,UINT16 *pOutputSize)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_InputMapping(UINT16* pData)
 {
-
     memcpy((UINT8*)pData, (UINT8*)(&Status0x6000)+sizeof(Status0x6000.u16SubIndex0), sizeof(Status0x6000)-sizeof(Status0x6000.u16SubIndex0));
+
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -308,7 +305,6 @@ void APPL_InputMapping(UINT16* pData)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_OutputMapping(UINT16* pData)
 {
-    
     memcpy((UINT8*)(&Control0x7000)+sizeof(Control0x7000.u16SubIndex0), (UINT8*)pData, sizeof(Control0x7000)-sizeof(Control0x7000.u16SubIndex0)); // XXX skip u16SubIndex0
 
 }
@@ -320,7 +316,6 @@ void APPL_OutputMapping(UINT16* pData)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_Application(void)
 {
- 
 //    pet_the_dog();
     check_msthb();
     Status0x6000.Slvhb++;
@@ -340,12 +335,12 @@ void APPL_Application(void)
 *////////////////////////////////////////////////////////////////////////////////////////
 UINT16 APPL_GetDeviceID()
 {
-//#if _WIN32
-//   #pragma message ("Warning: Implement explicit Device ID latching")
-//#else
-//    #warning "Implement explicit Device ID latching"
-//#endif
-//    /* Explicit Device 5 is expected by Explicit Device ID conformance tests*/
+// #if _WIN32
+//    #pragma message ("Warning: Implement explicit Device ID latching")
+// #else
+//     #warning "Implement explicit Device ID latching"
+// #endif
+    /* Explicit Device 5 is expected by Explicit Device ID conformance tests*/
     return 0x5;
 }
 #endif

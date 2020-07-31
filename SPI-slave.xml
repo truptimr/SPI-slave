@@ -32,7 +32,6 @@
 							<ResponseTimeout>2000</ResponseTimeout>
 						</Timeout>
 					</Mailbox>
-					<IdentificationReg134>true</IdentificationReg134>
 				</Info>
 				<GroupType>SSC_Device</GroupType>
 				<Profile>
@@ -1229,7 +1228,7 @@
 									<BitSize>16</BitSize>
 									<BitOffs>16</BitOffs>
 									<Flags>
-										<Access WriteRestrictions="PreOP">rw</Access>
+										<Access>ro</Access>
 									</Flags>
 								</SubItem>
 								<SubItem>
@@ -1353,7 +1352,7 @@
 									<BitSize>16</BitSize>
 									<BitOffs>16</BitOffs>
 									<Flags>
-										<Access WriteRestrictions="PreOP">rw</Access>
+										<Access>ro</Access>
 									</Flags>
 								</SubItem>
 								<SubItem>
@@ -5380,24 +5379,9 @@
 					</Entry>
 				</TxPdo>
 				<Mailbox DataLinkLayer="true">
-					<EoE />
 					<CoE SdoInfo="true" PdoAssign="false" PdoConfig="false" CompleteAccess="true" SegmentedSdo="true" />
 					<FoE />
 				</Mailbox>
-				<Dc>
-					<OpMode>
-						<Name>Synchron</Name>
-						<Desc>SM-Synchron</Desc>
-						<AssignActivate>#x0</AssignActivate>
-					</OpMode>
-					<OpMode>
-						<Name>DC</Name>
-						<Desc>DC-Synchron</Desc>
-						<AssignActivate>#x300</AssignActivate>
-						<CycleTimeSync0 Factor="1">0</CycleTimeSync0>
-						<CycleTimeSync1 Factor="1">0</CycleTimeSync1>
-					</OpMode>
-				</Dc>
 				<Eeprom>
 					<ByteSize>2048</ByteSize>
 					<ConfigData>800E00CC8813FF00000000800000</ConfigData>
