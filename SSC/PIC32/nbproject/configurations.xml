@@ -13,7 +13,6 @@
         <itemPath>../Common/ecatfoe.h</itemPath>
         <itemPath>../Common/ecatslv.h</itemPath>
         <itemPath>../Common/ecat_def.h</itemPath>
-        <itemPath>../Common/emcy.h</itemPath>
         <itemPath>../Common/esc.h</itemPath>
         <itemPath>../Common/mailbox.h</itemPath>
         <itemPath>../Common/objdef.h</itemPath>
@@ -71,7 +70,6 @@
         <itemPath>../Common/ecatcoe.c</itemPath>
         <itemPath>../Common/ecatfoe.c</itemPath>
         <itemPath>../Common/ecatslv.c</itemPath>
-        <itemPath>../Common/emcy.c</itemPath>
         <itemPath>../Common/mailbox.c</itemPath>
         <itemPath>../Common/objdef.c</itemPath>
         <itemPath>../Common/sdoserv.c</itemPath>

@@ -14,7 +14,7 @@
 			</Group>
 		</Groups>
 		<Devices>
-			<Device Physics="YYY">
+			<Device Physics="YY">
 				<Type ProductCode="#x00009252" RevisionNo="#x1">SPI-slave</Type>
 				<Name>SPI-slave</Name>
 				<Info>
@@ -5379,7 +5379,7 @@
 					</Entry>
 				</TxPdo>
 				<Mailbox DataLinkLayer="true">
-					<CoE SdoInfo="true" PdoAssign="false" PdoConfig="false" CompleteAccess="true" SegmentedSdo="true" />
+					<CoE SdoInfo="true" PdoAssign="false" PdoConfig="false" CompleteAccess="false" SegmentedSdo="false" />
 					<FoE />
 				</Mailbox>
 				<Eeprom>

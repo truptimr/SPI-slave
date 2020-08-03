@@ -1164,9 +1164,6 @@ UINT16 ESC_EepromWriteCRC(void)
 
 
 /** @} */
-UINT32 sync0;
-UINT32 sync1;
-UINT32 pdi;
 
 void Sync0_Isr(void) { sync0++; }
 void Sync1_Isr(void) { sync1++; }
