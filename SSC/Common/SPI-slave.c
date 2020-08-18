@@ -32,6 +32,7 @@
 #include "console.h"
 #include "semi_auto.h"
 #include "global.h"
+#include "usleep.h"
 /*--------------------------------------------------------------------------------------
 ------
 ------    local types and defines
@@ -87,11 +88,12 @@ UINT16 APPL_StartMailboxHandler(void)
 
     UINT16 rtn = ESC_EepromAccess(0x4,1,&SiiIDValue,ESC_RD);
 //    printk("SII value %u \r\n", SiiIDValue);
-    if (SiiIDValue != Misc0x8005.Unique_id  || (Misc0x8005.Unique_id  != 0) ){
+    if (SiiIDValue != Misc0x8005.Unique_id || Misc0x8005.Unique_id == 0 ){
         SiiIDValue = 0;
         UINT16 rtn = ESC_EepromAccess(0x4,1,&SiiIDValue, ESC_WR);
 //        printk("Unique id is  %u \r\n", Misc0x8005.Unique_id);
         ESC_EepromWriteCRC();
+        usleep(5000);
         Status0x6000.Err_id = 1;  
     }
     else{

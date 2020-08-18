@@ -16,4 +16,6 @@ build/SPI_XC32_PIC32MX795F512L/production/_ext/2108356922/SPI-slave.o:  \
 ../src/ti_wdt.h  \
  ../src/console.h  \
 ../src/semi_auto.h  \
-../src/global.h 
+../src/global.h  \
+../src/usleep.h  \
+ ../src/bsp.h 

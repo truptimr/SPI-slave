@@ -861,6 +861,7 @@ void check_msthb(){
     {
       prev_msthb = Control0x7000.Msthb;
       tic_msthb = 0; // reset grace period
+      Status0x6000.Err_msthb = 0;
     }
 //  printk("tic_msthb %u err_mstbh %d \r\n",tic_msthb, Status0x6000.Err_msthb);
 }
