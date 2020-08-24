@@ -60,6 +60,8 @@ typedef struct
 #define EXT_SEG_ADRS_RECORD 2
 #define EXT_LIN_ADRS_RECORD 4
 
+int flag_reflash_required = 0; // copy to memory complete, now we need to reflash
+
 static void ConvertAsciiToHex(UINT8 * asciiRec, UINT8 * hexRec)
 {
   UINT8 i = 0;
@@ -144,7 +146,7 @@ static void __longramfunc__ reflash_ram_exe()
 
 }
 
-static void reflash()
+void reflash()
 {
   int intStat;
   int dmaSusp;
@@ -273,7 +275,8 @@ static void WriteHexRecord2Flash(UINT8 * HexRecord)
           HexRecordSt.ExtSegAddress.Val = 0;
           HexRecordSt.ExtLinAddress.Val = 0;
           printk("END_OF_FILE_RECORD, reflash and reset\r\n");
-          reflash();
+          flag_reflash_required = 1; // let the appl know we want to reflash.
+//          reflash();
           // NVMemExit(); // we'll never get here
           // SoftReset();
           break;

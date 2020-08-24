@@ -23,5 +23,7 @@
 
 void erase_flash(void);
 void firmware_dl(uint16_t * pData, uint16_t Size);
+void reflash();
+
 
 

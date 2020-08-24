@@ -33,6 +33,7 @@
 #include "semi_auto.h"
 #include "global.h"
 #include "usleep.h"
+#include "bootloader.h"
 /*--------------------------------------------------------------------------------------
 ------
 ------    local types and defines
@@ -44,7 +45,7 @@
 ------    local variables and constants
 ------
 -----------------------------------------------------------------------------------------*/
-
+extern int flag_reflash_required;
 /*-----------------------------------------------------------------------------------------
 ------
 ------    application specific functions
@@ -315,6 +316,8 @@ void APPL_OutputMapping(UINT16* pData)
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_Application(void)
 {
+    UINT8 current_state = STATE_MASK & nAlStatus;
+    
 //    pet_the_dog();
     check_msthb();
     Status0x6000.Slvhb++;
@@ -323,6 +326,14 @@ void APPL_Application(void)
     update_port_control();
     semi_auto();
     update_port_status();
+    // we will allow the MCU to flash and reboot during the transition from boot
+  // to init state, or while in the init state, of the ECAT system
+  if(flag_reflash_required == 1
+     && (current_state == STATE_INIT || nAlStatus == BOOT_2_INIT))
+  {
+    printk("Performing re-flash\r\n");
+    reflash();
+  }
 }
 
 #if EXPLICIT_DEVICE_ID
