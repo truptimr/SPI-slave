@@ -321,19 +321,22 @@ void APPL_Application(void)
 //    pet_the_dog();
     check_msthb();
     Status0x6000.Slvhb++;
-//    Status0x6000.Readbackpdo++;
-//    printk("rb %f \r\n",Status0x6000.Readbackpdo);
-    update_port_control();
-    semi_auto();
-    update_port_status();
+
+    if(flag_reflash_required == 1
+    && (current_state == STATE_INIT || nAlStatus == BOOT_2_INIT))
+    {
+        printk("Performing re-flash\r\n");
+        reflash();
+    }
+    
+    if(current_state != STATE_BOOT){
+        update_port_control();
+        semi_auto();
+        update_port_status();
+    }
     // we will allow the MCU to flash and reboot during the transition from boot
   // to init state, or while in the init state, of the ECAT system
-  if(flag_reflash_required == 1
-     && (current_state == STATE_INIT || nAlStatus == BOOT_2_INIT))
-  {
-    printk("Performing re-flash\r\n");
-    reflash();
-  }
+
 }
 
 #if EXPLICIT_DEVICE_ID
