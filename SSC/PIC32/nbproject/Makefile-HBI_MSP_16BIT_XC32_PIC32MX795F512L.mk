@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../Common/9252_HW.c ../Common/coeappl.c ../Common/ecatappl.c ../Common/ecatcoe.c ../Common/ecateoe.c ../Common/ecatfoe.c ../Common/ecatslv.c ../Common/emcy.c ../Common/eoeappl.c ../Common/foeappl.c ../Common/mailbox.c ../Common/objdef.c ../Common/sdoserv.c PMPDriver/PMPDriver.c PMPDriver/PIC32PMPDriver.c exceptions.c main.c user.c PICHW.c ../Common/SPI-slave.c
+SOURCEFILES_QUOTED_IF_SPACED=../Common/9252_HW.c ../Common/coeappl.c ../Common/ecatappl.c ../Common/ecatcoe.c ../Common/ecateoe.c ../Common/ecatfoe.c ../Common/ecatslv.c ../Common/emcy.c ../Common/eoeappl.c ../Common/foeappl.c ../Common/mailbox.c ../Common/objdef.c ../Common/sdoserv.c PMPDriver/PMPDriver.c PMPDriver/PIC32PMPDriver.c exceptions.c main.c user.c PICHW.c ../Common/m1eph.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/2108356922/9252_HW.o ${OBJECTDIR}/_ext/2108356922/coeappl.o ${OBJECTDIR}/_ext/2108356922/ecatappl.o ${OBJECTDIR}/_ext/2108356922/ecatcoe.o ${OBJECTDIR}/_ext/2108356922/ecateoe.o ${OBJECTDIR}/_ext/2108356922/ecatfoe.o ${OBJECTDIR}/_ext/2108356922/ecatslv.o ${OBJECTDIR}/_ext/2108356922/emcy.o ${OBJECTDIR}/_ext/2108356922/eoeappl.o ${OBJECTDIR}/_ext/2108356922/foeappl.o ${OBJECTDIR}/_ext/2108356922/mailbox.o ${OBJECTDIR}/_ext/2108356922/objdef.o ${OBJECTDIR}/_ext/2108356922/sdoserv.o ${OBJECTDIR}/PMPDriver/PMPDriver.o ${OBJECTDIR}/PMPDriver/PIC32PMPDriver.o ${OBJECTDIR}/exceptions.o ${OBJECTDIR}/main.o ${OBJECTDIR}/user.o ${OBJECTDIR}/PICHW.o ${OBJECTDIR}/_ext/2108356922/SPI-slave.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/2108356922/9252_HW.o.d ${OBJECTDIR}/_ext/2108356922/coeappl.o.d ${OBJECTDIR}/_ext/2108356922/ecatappl.o.d ${OBJECTDIR}/_ext/2108356922/ecatcoe.o.d ${OBJECTDIR}/_ext/2108356922/ecateoe.o.d ${OBJECTDIR}/_ext/2108356922/ecatfoe.o.d ${OBJECTDIR}/_ext/2108356922/ecatslv.o.d ${OBJECTDIR}/_ext/2108356922/emcy.o.d ${OBJECTDIR}/_ext/2108356922/eoeappl.o.d ${OBJECTDIR}/_ext/2108356922/foeappl.o.d ${OBJECTDIR}/_ext/2108356922/mailbox.o.d ${OBJECTDIR}/_ext/2108356922/objdef.o.d ${OBJECTDIR}/_ext/2108356922/sdoserv.o.d ${OBJECTDIR}/PMPDriver/PMPDriver.o.d ${OBJECTDIR}/PMPDriver/PIC32PMPDriver.o.d ${OBJECTDIR}/exceptions.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/user.o.d ${OBJECTDIR}/PICHW.o.d ${OBJECTDIR}/_ext/2108356922/SPI-slave.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/2108356922/9252_HW.o ${OBJECTDIR}/_ext/2108356922/coeappl.o ${OBJECTDIR}/_ext/2108356922/ecatappl.o ${OBJECTDIR}/_ext/2108356922/ecatcoe.o ${OBJECTDIR}/_ext/2108356922/ecateoe.o ${OBJECTDIR}/_ext/2108356922/ecatfoe.o ${OBJECTDIR}/_ext/2108356922/ecatslv.o ${OBJECTDIR}/_ext/2108356922/emcy.o ${OBJECTDIR}/_ext/2108356922/eoeappl.o ${OBJECTDIR}/_ext/2108356922/foeappl.o ${OBJECTDIR}/_ext/2108356922/mailbox.o ${OBJECTDIR}/_ext/2108356922/objdef.o ${OBJECTDIR}/_ext/2108356922/sdoserv.o ${OBJECTDIR}/PMPDriver/PMPDriver.o ${OBJECTDIR}/PMPDriver/PIC32PMPDriver.o ${OBJECTDIR}/exceptions.o ${OBJECTDIR}/main.o ${OBJECTDIR}/user.o ${OBJECTDIR}/PICHW.o ${OBJECTDIR}/_ext/2108356922/m1eph.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/2108356922/9252_HW.o.d ${OBJECTDIR}/_ext/2108356922/coeappl.o.d ${OBJECTDIR}/_ext/2108356922/ecatappl.o.d ${OBJECTDIR}/_ext/2108356922/ecatcoe.o.d ${OBJECTDIR}/_ext/2108356922/ecateoe.o.d ${OBJECTDIR}/_ext/2108356922/ecatfoe.o.d ${OBJECTDIR}/_ext/2108356922/ecatslv.o.d ${OBJECTDIR}/_ext/2108356922/emcy.o.d ${OBJECTDIR}/_ext/2108356922/eoeappl.o.d ${OBJECTDIR}/_ext/2108356922/foeappl.o.d ${OBJECTDIR}/_ext/2108356922/mailbox.o.d ${OBJECTDIR}/_ext/2108356922/objdef.o.d ${OBJECTDIR}/_ext/2108356922/sdoserv.o.d ${OBJECTDIR}/PMPDriver/PMPDriver.o.d ${OBJECTDIR}/PMPDriver/PIC32PMPDriver.o.d ${OBJECTDIR}/exceptions.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/user.o.d ${OBJECTDIR}/PICHW.o.d ${OBJECTDIR}/_ext/2108356922/m1eph.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/2108356922/9252_HW.o ${OBJECTDIR}/_ext/2108356922/coeappl.o ${OBJECTDIR}/_ext/2108356922/ecatappl.o ${OBJECTDIR}/_ext/2108356922/ecatcoe.o ${OBJECTDIR}/_ext/2108356922/ecateoe.o ${OBJECTDIR}/_ext/2108356922/ecatfoe.o ${OBJECTDIR}/_ext/2108356922/ecatslv.o ${OBJECTDIR}/_ext/2108356922/emcy.o ${OBJECTDIR}/_ext/2108356922/eoeappl.o ${OBJECTDIR}/_ext/2108356922/foeappl.o ${OBJECTDIR}/_ext/2108356922/mailbox.o ${OBJECTDIR}/_ext/2108356922/objdef.o ${OBJECTDIR}/_ext/2108356922/sdoserv.o ${OBJECTDIR}/PMPDriver/PMPDriver.o ${OBJECTDIR}/PMPDriver/PIC32PMPDriver.o ${OBJECTDIR}/exceptions.o ${OBJECTDIR}/main.o ${OBJECTDIR}/user.o ${OBJECTDIR}/PICHW.o ${OBJECTDIR}/_ext/2108356922/SPI-slave.o
+OBJECTFILES=${OBJECTDIR}/_ext/2108356922/9252_HW.o ${OBJECTDIR}/_ext/2108356922/coeappl.o ${OBJECTDIR}/_ext/2108356922/ecatappl.o ${OBJECTDIR}/_ext/2108356922/ecatcoe.o ${OBJECTDIR}/_ext/2108356922/ecateoe.o ${OBJECTDIR}/_ext/2108356922/ecatfoe.o ${OBJECTDIR}/_ext/2108356922/ecatslv.o ${OBJECTDIR}/_ext/2108356922/emcy.o ${OBJECTDIR}/_ext/2108356922/eoeappl.o ${OBJECTDIR}/_ext/2108356922/foeappl.o ${OBJECTDIR}/_ext/2108356922/mailbox.o ${OBJECTDIR}/_ext/2108356922/objdef.o ${OBJECTDIR}/_ext/2108356922/sdoserv.o ${OBJECTDIR}/PMPDriver/PMPDriver.o ${OBJECTDIR}/PMPDriver/PIC32PMPDriver.o ${OBJECTDIR}/exceptions.o ${OBJECTDIR}/main.o ${OBJECTDIR}/user.o ${OBJECTDIR}/PICHW.o ${OBJECTDIR}/_ext/2108356922/m1eph.o
 
 # Source Files
-SOURCEFILES=../Common/9252_HW.c ../Common/coeappl.c ../Common/ecatappl.c ../Common/ecatcoe.c ../Common/ecateoe.c ../Common/ecatfoe.c ../Common/ecatslv.c ../Common/emcy.c ../Common/eoeappl.c ../Common/foeappl.c ../Common/mailbox.c ../Common/objdef.c ../Common/sdoserv.c PMPDriver/PMPDriver.c PMPDriver/PIC32PMPDriver.c exceptions.c main.c user.c PICHW.c ../Common/SPI-slave.c
+SOURCEFILES=../Common/9252_HW.c ../Common/coeappl.c ../Common/ecatappl.c ../Common/ecatcoe.c ../Common/ecateoe.c ../Common/ecatfoe.c ../Common/ecatslv.c ../Common/emcy.c ../Common/eoeappl.c ../Common/foeappl.c ../Common/mailbox.c ../Common/objdef.c ../Common/sdoserv.c PMPDriver/PMPDriver.c PMPDriver/PIC32PMPDriver.c exceptions.c main.c user.c PICHW.c ../Common/m1eph.c
 
 
 
@@ -221,11 +221,11 @@ ${OBJECTDIR}/PICHW.o: PICHW.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/PICHW.o 
 	@${FIXDEPS} "${OBJECTDIR}/PICHW.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -DPIC32_STARTER_KIT -DPIC32_HW -DHBI_MSP_16BIT -D_SUPPRESS_PLIB_WARNING -I"../Common" -MMD -MF "${OBJECTDIR}/PICHW.o.d" -o ${OBJECTDIR}/PICHW.o PICHW.c    -DXPRJ_HBI_MSP_16BIT_XC32_PIC32MX795F512L=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
-${OBJECTDIR}/_ext/2108356922/SPI-slave.o: ../Common/SPI-slave.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/2108356922/m1eph.o: ../Common/m1eph.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/SPI-slave.o.d 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/SPI-slave.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/2108356922/SPI-slave.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -DPIC32_STARTER_KIT -DPIC32_HW -DHBI_MSP_16BIT -D_SUPPRESS_PLIB_WARNING -I"../Common" -MMD -MF "${OBJECTDIR}/_ext/2108356922/SPI-slave.o.d" -o ${OBJECTDIR}/_ext/2108356922/SPI-slave.o ../Common/SPI-slave.c    -DXPRJ_HBI_MSP_16BIT_XC32_PIC32MX795F512L=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${RM} ${OBJECTDIR}/_ext/2108356922/m1eph.o.d 
+	@${RM} ${OBJECTDIR}/_ext/2108356922/m1eph.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/2108356922/m1eph.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_REAL_ICE=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -DPIC32_STARTER_KIT -DPIC32_HW -DHBI_MSP_16BIT -D_SUPPRESS_PLIB_WARNING -I"../Common" -MMD -MF "${OBJECTDIR}/_ext/2108356922/m1eph.o.d" -o ${OBJECTDIR}/_ext/2108356922/m1eph.o ../Common/m1eph.c    -DXPRJ_HBI_MSP_16BIT_XC32_PIC32MX795F512L=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 else
 ${OBJECTDIR}/_ext/2108356922/9252_HW.o: ../Common/9252_HW.c  nbproject/Makefile-${CND_CONF}.mk
@@ -342,11 +342,11 @@ ${OBJECTDIR}/PICHW.o: PICHW.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/PICHW.o 
 	@${FIXDEPS} "${OBJECTDIR}/PICHW.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -DPIC32_STARTER_KIT -DPIC32_HW -DHBI_MSP_16BIT -D_SUPPRESS_PLIB_WARNING -I"../Common" -MMD -MF "${OBJECTDIR}/PICHW.o.d" -o ${OBJECTDIR}/PICHW.o PICHW.c    -DXPRJ_HBI_MSP_16BIT_XC32_PIC32MX795F512L=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
-${OBJECTDIR}/_ext/2108356922/SPI-slave.o: ../Common/SPI-slave.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/2108356922/m1eph.o: ../Common/m1eph.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/2108356922" 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/SPI-slave.o.d 
-	@${RM} ${OBJECTDIR}/_ext/2108356922/SPI-slave.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/2108356922/SPI-slave.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -DPIC32_STARTER_KIT -DPIC32_HW -DHBI_MSP_16BIT -D_SUPPRESS_PLIB_WARNING -I"../Common" -MMD -MF "${OBJECTDIR}/_ext/2108356922/SPI-slave.o.d" -o ${OBJECTDIR}/_ext/2108356922/SPI-slave.o ../Common/SPI-slave.c    -DXPRJ_HBI_MSP_16BIT_XC32_PIC32MX795F512L=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	@${RM} ${OBJECTDIR}/_ext/2108356922/m1eph.o.d 
+	@${RM} ${OBJECTDIR}/_ext/2108356922/m1eph.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/2108356922/m1eph.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -DPIC32_STARTER_KIT -DPIC32_HW -DHBI_MSP_16BIT -D_SUPPRESS_PLIB_WARNING -I"../Common" -MMD -MF "${OBJECTDIR}/_ext/2108356922/m1eph.o.d" -o ${OBJECTDIR}/_ext/2108356922/m1eph.o ../Common/m1eph.c    -DXPRJ_HBI_MSP_16BIT_XC32_PIC32MX795F512L=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
 endif
 

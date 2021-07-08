@@ -1,4 +1,4 @@
-#include "SPI-slave_Foe.h"
+#include "m1eph_Foe.h"
 #include "applInterface.h"
 #include "ecatfoe.h"
 

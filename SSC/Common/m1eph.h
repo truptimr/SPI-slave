@@ -4,13 +4,13 @@
 */
 
 /**
- * \addtogroup SPI-slave SPI-slave
+ * \addtogroup m1eph m1eph
  * @{
  */
 
 /**
-\file SPI-slave.h
-\brief SPI-slave function prototypes and defines
+\file m1eph.h
+\brief m1eph function prototypes and defines
 
 \version 1.0.0.11
  */
@@ -38,7 +38,7 @@
 #endif //_SPISLAVE_H_
 
 //include custom application object dictionary 
-#include "SPI-slaveObjects.h"
+#include "m1ephObjects.h"
 
 
 #if defined(_SPISLAVE_) && (_SPISLAVE_ == 1)

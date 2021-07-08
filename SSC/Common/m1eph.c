@@ -4,12 +4,12 @@
 */
 
 /**
-\addtogroup SPI-slave SPI-slave
+\addtogroup m1eph m1eph
 @{
 */
 
 /**
-\file SPI-slave.c
+\file m1eph.c
 \brief Implementation
 
 \version 1.0.0.11
@@ -26,7 +26,7 @@
 #include "applInterface.h"
 
 #define _SPISLAVE_ 1
-#include "SPI-slave.h"
+#include "m1eph.h"
 #undef _SPISLAVE_
 #include "ti_wdt.h"
 #include "console.h"

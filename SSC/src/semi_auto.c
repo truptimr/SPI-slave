@@ -8,7 +8,7 @@
 #include"config.h"
 #include"console.h"
 #include "common.h"
-#include "SPI-slave.h"
+#include "m1eph.h"
 
 
 BOOL disable[16], enable[16], port_status[16];
