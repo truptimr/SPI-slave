@@ -71,7 +71,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "ti_wdt.h"
 #include "semi_auto.h"
 //#include "global.h"
-#include "SPI-slave.h"
+#include "m1eph.h"
 
 
 //void __ISR(_CORE_TIMER_VECTOR, IPL2SOFT) CoreTimerHandler(void)

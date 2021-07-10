@@ -138,8 +138,8 @@ V4.00 APPL 6: The main function was split in MainInit and MainLoop
 #include "applInterface.h"
 #undef _APPL_INTERFACE_
 
-#include "SPI-slave.h"
-#include "SPI-slave_Foe.h"
+#include "m1eph.h"
+#include "m1eph_Foe.h"
 
 
 /*--------------------------------------------------------------------------------------

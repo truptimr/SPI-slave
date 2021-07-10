@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/tranka/Documents/SPI-slave/SSC/src/TPS238x.c</file>
-            <file>file:/Users/tranka/Documents/SPI-slave/SSC/src/TPS238x.h</file>
-            <file>file:/Users/tranka/Documents/SPI-slave/SSC/PIC32/main.c</file>
-            <file>file:/Users/tranka/Documents/SPI-slave/SSC/Common/SPI-slave.c</file>
-            <file>file:/Users/tranka/Documents/SPI-slave/SSC/src/semi_auto.c</file>
+            <file>file:/Users/tranka/Documents/m1eph/SSC/src/TPS238x.c</file>
+            <file>file:/Users/tranka/Documents/m1eph/SSC/src/TPS238x.h</file>
+            <file>file:/Users/tranka/Documents/m1eph/SSC/PIC32/main.c</file>
+            <file>file:/Users/tranka/Documents/m1eph/SSC/Common/m1eph.c</file>
+            <file>file:/Users/tranka/Documents/m1eph/SSC/src/semi_auto.c</file>
         </group>
     </open-files>
 </project-private>

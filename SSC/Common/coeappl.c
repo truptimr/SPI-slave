@@ -122,7 +122,7 @@ V4.00 ECAT 1: The handling of the Sync Manager Parameter was included according 
 
 
 /*Add Application specific Objects*/
-#include "SPI-slave.h"
+#include "m1eph.h"
 
 
 #undef _OBJD_

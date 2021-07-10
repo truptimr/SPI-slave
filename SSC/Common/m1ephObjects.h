@@ -4,15 +4,15 @@
 */
 
 /**
-* \addtogroup SPI-slave SPI-slave
+* \addtogroup m1eph m1eph
 * @{
 */
 
 /**
-\file SPI-slaveObjects
+\file m1ephObjects
 \author ET9300Utilities.ApplicationHandler (Version 1.5.0.0) | EthercatSSC@beckhoff.com
 
-\brief SPI-slave specific objects<br>
+\brief m1eph specific objects<br>
 \brief NOTE : This file will be overwritten if a new object dictionary is generated!<br>
 */
 

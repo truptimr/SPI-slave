@@ -17,10 +17,10 @@
         <itemPath>../Common/mailbox.h</itemPath>
         <itemPath>../Common/objdef.h</itemPath>
         <itemPath>../Common/sdoserv.h</itemPath>
-        <itemPath>../Common/SPI-slave.h</itemPath>
-        <itemPath>../Common/SPI-slaveObjects.h</itemPath>
+        <itemPath>../Common/m1eph.h</itemPath>
+        <itemPath>../Common/m1ephObjects.h</itemPath>
         <itemPath>../Common/bootmode.h</itemPath>
-        <itemPath>../Common/SPI-slave_Foe.h</itemPath>
+        <itemPath>../Common/m1eph_Foe.h</itemPath>
         <itemPath>../Common/foeappl.h</itemPath>
       </logicalFolder>
       <logicalFolder name="PMPDriver" displayName="PMPDriver" projectFiles="true">
@@ -73,9 +73,9 @@
         <itemPath>../Common/mailbox.c</itemPath>
         <itemPath>../Common/objdef.c</itemPath>
         <itemPath>../Common/sdoserv.c</itemPath>
-        <itemPath>../Common/SPI-slave.c</itemPath>
+        <itemPath>../Common/m1eph.c</itemPath>
         <itemPath>../Common/bootmode.c</itemPath>
-        <itemPath>../Common/SPI-slave_Foe.c</itemPath>
+        <itemPath>../Common/m1eph_Foe.c</itemPath>
         <itemPath>../Common/foeappl.c</itemPath>
       </logicalFolder>
       <logicalFolder name="PMPDriver" displayName="PMPDriver" projectFiles="true">
